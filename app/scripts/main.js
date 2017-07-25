@@ -29,7 +29,13 @@ $(document).ready(function() {
   playButton.on('click', function(event) {
     event.preventDefault();
     /* Act on the event */
-    console.log(animation.prop);
+    console.log(animation.html());
     animation.trigger( animation.prop('paused') ? 'play' : 'pause');
+    if (animation.prop('paused')) {
+      playButton.html('►');
+    } else {
+      playButton.html('❚❚');
+
+    }
   });
 });
