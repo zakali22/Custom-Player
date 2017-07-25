@@ -30,8 +30,9 @@ body {
 
 .player__controls {
   position: relative;
-  bottom: 65px;
+  bottom: 66px;
 }
+
 
 .player__controls .progress, .toggle, .player__slider, .player__button {
   background: transparent;
@@ -51,7 +52,7 @@ body {
 }
 
 input[type="range"] {
-  width: 40%;
+  width: 45%;
   height: 12px;
   -webkit-appearance: none;
 }
