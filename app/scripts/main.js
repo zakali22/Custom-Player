@@ -23,8 +23,15 @@ $(document).ready(function() {
   var progress = $('.progress');
   var progressBar = $('.progress__filled');
   var playButton = $('.toggle');
-  var range = $('.slider');
+  var volume = $('#volume');
   var skip = $('.skip');
+
+  volume.on('click', function(event) {
+    event.preventDefault();
+    /* Act on the event */
+    console.log(event.target.value, animation["0"].volume);
+    animation["0"].volume = event.target.value;
+  });
 
   playButton.on('click', function(event) {
     event.preventDefault();
@@ -47,7 +54,6 @@ $(document).ready(function() {
       playButton.html('►');
     } else {
       playButton.html('❚❚');
-
     }
   });
 });
