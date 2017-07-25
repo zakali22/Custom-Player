@@ -29,11 +29,7 @@ $(document).ready(function() {
   playButton.on('click', function(event) {
     event.preventDefault();
     /* Act on the event */
-    console.log(animation);
-    if (!animation.paused) {
-      animation.trigger('play');
-    } else {
-      animation.trigger('pause');
-    }
+    console.log(animation.prop);
+    animation.trigger( animation.prop('paused') ? 'play' : 'pause');
   });
 });
