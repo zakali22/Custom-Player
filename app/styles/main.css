@@ -31,12 +31,6 @@ body {
 .player__controls {
   position: relative;
   bottom: 65px;
-  transition: all ease .6s;
-}
-
-.player__controls:hover {
-  position: relative;
-  bottom: 100px;
 }
 
 .player__controls .progress, .toggle, .player__slider, .player__button {
