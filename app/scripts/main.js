@@ -26,11 +26,21 @@ $(document).ready(function() {
   var volume = $('#volume');
   var speed = $('#speed');
 
+  animation.on('timeupdate', function(event) {
+    event.preventDefault();
+    /* Act on the event */
+    var percentDur = (animation["0"].currentTime / animation["0"].duration ) * 100;
+    progressBar.css({
+      "width": percentDur + "%"
+    });
+  });
+
   progress.on('click', function(event) {
     event.preventDefault();
     /* Act on the event */
-    var path = event.offsetX / progress["0"].offsetWidth
-    console.log(event.offsetX / progress["0"].offsetWidth);
+    console.log(progress[0].offsetWidth);
+    var path = (event.offsetX / progress["0"].offsetWidth) * animation["0"].duration;
+    animation["0"].currentTime = path;
   });
 
   volume.on('click', function(event) {
@@ -50,7 +60,6 @@ $(document).ready(function() {
   playButton.on('click', function(event) {
     event.preventDefault();
     /* Act on the event */
-    console.log(animation.html());
     animation.trigger( animation.prop('paused') ? 'play' : 'pause');
     if (animation.prop('paused')) {
       playButton.html('►');
@@ -61,20 +70,11 @@ $(document).ready(function() {
   animation.on('click', function(event) {
     event.preventDefault();
     /* Act on the event */
-    console.log(animation.html());
     animation.trigger( animation.prop('paused') ? 'play' : 'pause');
     if (animation.prop('paused')) {
       playButton.html('►');
     } else {
       playButton.html('❚❚');
     }
-  });
-  animation.on('timeupdate', function(event) {
-    event.preventDefault();
-    /* Act on the event */
-    var percentDur = (animation["0"].currentTime / animation["0"].duration )* 100;
-    progressBar.css({
-      "width": percentDur
-    });
   });
 });

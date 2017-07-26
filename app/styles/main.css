@@ -33,8 +33,7 @@ body {
   bottom: 66px;
 }
 
-
-.player__controls .progress, .toggle, .player__slider, .player__button {
+.toggle, .player__slider, .player__button {
   background: transparent;
   border: none;
   color: white;
@@ -42,7 +41,12 @@ body {
 
 .player__controls .progress {
   width: 100%;
+  background: black;
+  opacity: 0.6;
+  cursor: pointer;
 }
+
+
 .progress__filled {
   background-color: #e8da44;
   width: 0%;
