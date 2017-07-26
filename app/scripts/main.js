@@ -24,13 +24,23 @@ $(document).ready(function() {
   var progressBar = $('.progress__filled');
   var playButton = $('.toggle');
   var volume = $('#volume');
-  var skip = $('.skip');
+  var speed = $('#speed');
 
   volume.on('click', function(event) {
     event.preventDefault();
     /* Act on the event */
     console.log(event.target.value, animation["0"].volume);
     animation["0"].volume = event.target.value;
+  });
+
+  speed.on('click', function(event) {
+    event.preventDefault();
+    /* Act on the event */
+    if (speed) {
+      console.log("Second is clicked");
+    }
+    console.log(event.target.value, animation["0"].playbackRate);
+    animation["0"].playbackRate = event.target.value;
   });
 
   playButton.on('click', function(event) {
