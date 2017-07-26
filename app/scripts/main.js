@@ -36,9 +36,6 @@ $(document).ready(function() {
   speed.on('click', function(event) {
     event.preventDefault();
     /* Act on the event */
-    if (speed) {
-      console.log("Second is clicked");
-    }
     console.log(event.target.value, animation["0"].playbackRate);
     animation["0"].playbackRate = event.target.value;
   });
