@@ -1,6 +1,6 @@
 # Custom-Player
 
-# A custom HTML5 player built from scratch
+# A custom HTML5 player built from scratch using jQuery
 
 # To see this project:
 
