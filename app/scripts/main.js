@@ -26,6 +26,13 @@ $(document).ready(function() {
   var volume = $('#volume');
   var speed = $('#speed');
 
+  progress.on('click', function(event) {
+    event.preventDefault();
+    /* Act on the event */
+    var path = event.offsetX / progress["0"].offsetWidth
+    console.log(event.offsetX / progress["0"].offsetWidth);
+  });
+
   volume.on('click', function(event) {
     event.preventDefault();
     /* Act on the event */
@@ -49,7 +56,6 @@ $(document).ready(function() {
       playButton.html('►');
     } else {
       playButton.html('❚❚');
-
     }
   });
   animation.on('click', function(event) {
@@ -62,5 +68,13 @@ $(document).ready(function() {
     } else {
       playButton.html('❚❚');
     }
+  });
+  animation.on('timeupdate', function(event) {
+    event.preventDefault();
+    /* Act on the event */
+    var percentDur = (animation["0"].currentTime / animation["0"].duration )* 100;
+    progressBar.css({
+      "width": percentDur
+    });
   });
 });

@@ -45,7 +45,7 @@ body {
 }
 .progress__filled {
   background-color: #e8da44;
-  width: 50%;
+  width: 0%;
   height: 100%;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
