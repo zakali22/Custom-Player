@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Raleway|Poiret+One');
 
 body {
   background-color: lightyellow;
@@ -106,6 +106,7 @@ input[type="range"]:focus , .player__button:focus {
   bottom: 10px;
   right: 20px;
   font-size: 20px;
+  font-family: 'Poiret One', cursive;
 }
 
 .footer i {
